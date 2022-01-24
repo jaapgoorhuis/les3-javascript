@@ -2,6 +2,7 @@
 // Je zult hier methoden van het String Object voor nodig hebben, dus pak de paragraaf op EdHub over het String Object er even bij.
 
 
+
 /* Opdracht  1 */
 // Schrijf een functie genaamd getEmailDomain, die een emailadres verwacht en de domeinnaam teruggeeft. Een domeinnaam is hetgeen dat na het @ in het adres staat
 // ---- Verwachte uitkomsten:
@@ -10,6 +11,15 @@
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
 
+function getEmailDomain (email) {
+    const email1 = email.substring(email.indexOf('@')+1);
+    return email1;
+}
+
+console.log(getEmailDomain('n.eeken@novi-education.nl'));
+console.log(getEmailDomain('t.mellink@novi.nl'));
+console.log(getEmailDomain('a.wiersma@outlook.com'));
+
 
 
 /* Opdracht  2 */
@@ -17,9 +27,25 @@
 // ---- Verwachte uitkomsten:
 // typeOfEmail("n.eeken@novi-education.nl") geeft "Student"
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
-// typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
+// typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+console.log('opdracht 2----------------------------------');
+function typeOfEmail(email) {
+    domain = email.substring(email.indexOf('@')+1);
+        if (domain === 'novi-education.nl') {
+            return 'Student';
+        } else if (domain === 'novi.nl') {
+            return 'Medewerker';
+        } else if (domain === 'outlook.com') {
+            return 'Extern';
+        }
+
+};
+console.log(typeOfEmail('n.eeken@novi-education.nl'));
+console.log(typeOfEmail('t.mellink@novi.nl'));
+console.log(typeOfEmail('novi.nlaapjesk@outlook.com'));
+console.log(typeOfEmail('a.wiersma@outlook.com'));
 
 
 /* Opdracht  3 */
@@ -34,3 +60,15 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+console.log('opdracht 3------------------------------');
+function checkEmailValidity(email) {
+    var checkemail = /\S+@\S+\.\S+/;
+    return checkemail.test(email);
+}
+
+console.log(checkEmailValidity('n.eeken@novi.nl'));
+console.log(checkEmailValidity('tessmellink@novi.nl'));
+console.log(checkEmailValidity('n.eekenanovi.nl'));
+console.log(checkEmailValidity('n.eeken@novinl.'));
+console.log(checkEmailValidity('tessmellink@novi,nl'));
