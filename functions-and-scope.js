@@ -95,7 +95,6 @@ console.log(averageGrade(grades))
 console.log(averageGrade([6,4,5]))
 console.log(averageGrade([8,9,4,5,10]))
 
-
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
@@ -114,7 +113,6 @@ function averageGrade(grades) {
 console.log(averageGrade(grades))
 console.log(averageGrade([6,4,5]))
 console.log(averageGrade([8,9,4,5,10]))
-
 
 /* Bonusopdracht: hoogste cijfer */
 
